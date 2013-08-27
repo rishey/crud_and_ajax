@@ -1,0 +1,13 @@
+<label for="first_name">First Name</label>
+<input id="first_name" type="text" name="contact[first_name]" placeholder="Bob" value="<%= @contact.try(:first_name)%>"><br>
+
+<label for="last_name">Last Name</label>
+<input id="last_name" type="text" name="contact[last_name]" placeholder="Smith" value="<%= @contact.try(:last_name)%>"><br>
+
+<label for="email">Email</label>
+<input id="email" type="email" name="contact[email]" placeholder="bob@bob.com" value="<%= @contact.try(:email)%>"><br>
+
+<label for="phone">Phone</label>
+<input id="phone" type="tel" name="contact[phone]" placeholder="312.555.1212" value="<%=@contact.try(:phone)%>"><br>
+
+<input type="Submit">

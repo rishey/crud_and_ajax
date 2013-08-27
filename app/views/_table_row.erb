@@ -1,0 +1,12 @@
+<tr>
+  <td><%= contact.id %></td>
+  <td><%= contact.full_name %></td>
+  <td><%= contact.email %></td>
+  <td><%= contact.phone %></td>
+  <td>
+    <a href="/contacts/<%=contact.id%>/edit">Edit</a>
+    <form action="/contacts/<%=contact.id%>/delete" method="POST">
+      <input type="submit" value="DELETE">
+    </form>
+  </td>
+</tr>

@@ -1,23 +1,18 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
-
-  <table>
+<h1>Contacts</h1>
+<table>
+  <thead>
     <tr>
-      <th>File Description</th>
-      <th>File Location</th>
+      <th>Id</th>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Actions</th>
     </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
-</div>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <%= erb :_table_row, layout: false, locals: {contact: contact} %>
+    <% end %>
+  </tbody>
+</table>
+<a id="new" href="/contacts/new" title="Add Contact">Add Contact</a>
